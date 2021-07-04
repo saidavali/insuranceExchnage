@@ -1,0 +1,71 @@
+/* You can add global styles to this file, and also import other style files */
+.navbarNavDropdowndata{
+    justify-content: flex-end;
+    width: 100%;
+}
+.space-to-header{
+    margin-top: 60px;
+}
+.dropdown-menu-center{
+    width: 500px;
+    transform: translate(-20%, 17%);
+    padding: 1.25rem;
+    position: absolute;
+    z-index: 22;
+    background: #f8f8f8;
+    right: 0;
+}
+.role-details{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-bottom: 20px;
+}
+.role-details li{
+    border-bottom:2px solid #7da53f;
+    color:#329dcb;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-weight: bold;
+}
+.role-details li:hover{
+    cursor: pointer;
+}
+.role-details li.activeMember{
+    color:#7da53f;
+}
+.sign-in-button{
+    margin-top: 13px;
+}
+.btn{
+    padding: .375rem .75rem;
+    background: #329dcb;
+    border: 2px solid #329dcb;
+}
+.btn:hover, .btn:focus{
+    background: #7da53f;
+    border: 2px solid #7da53f;
+    box-shadow: none;
+}
+.site-header .navbar-brand img{
+    width: auto;
+}
+.picsum-img-wrapper img{
+    width: 100%;
+    height: 400px;
+}
+.address-section .content{
+    display: flex;
+    justify-content: center;
+}
+.pd-x3{
+    width: 100%;
+}
+.new-user{
+    font-size: 0.8em;
+    display: inline;
+    padding-right: 10px;
+}
+.new-user-details{
+    margin-top: 36px;
+}

@@ -1,0 +1,121 @@
+<div class="site-header header-s1 is-sticky has-fixed"> 
+  <nav class="navbar fixed-top navbar-primary navbar-expand-lg">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+        <a class="navbar-brand" href="#">
+          <img src="../assets/images/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+        </a>
+        <div class="navbarNavDropdowndata row">
+            <ul class="navbar-nav col-sm-10 ">
+              <li class="nav-item">
+                <a routerLink="/auto" class="nav-link" href="#">AUTO</a>
+              </li>
+              <li class="nav-item">
+                  <a routerLink="/business" class="nav-link" href="#">BUSINESS</a>
+              </li>
+              <li class="nav-item ">
+                <a routerLink="/home" class="nav-link" href="#">HOME</a>
+              </li>
+              <li class="nav-item">
+                  <a routerLink="/life" class="nav-link " href="#">LIFE</a>
+              </li>
+              <li class="nav-item">
+                <a  routerLink="/contactus" class="nav-link " href="#">CONTACT US</a>
+              </li>
+              <li class="nav-item get-a-quote">
+                <a routerLink="/getaquote" class="nav-link" href="#">Get A Quote</a>
+            </li>
+            <li class="nav-item get-a-quote">
+              <a class="nav-link" (click)="showsignIn()"href="#">Sign IN</a>
+          </li>
+            </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div *ngIf="moreSignIninfo" class=" box-flat member-info dropdown-menu-center">
+      <div class=""> 
+        <ul class="role-details" (click)="selectedMember($event)">
+          <li [ngClass]="activeMember == 'Member' ? 'activeMember' : ''">Member</li>
+          <li  [ngClass]="activeMember == 'Returning Shopper' ? 'activeMember' : ''">Returning Shopper</li>
+          <li  [ngClass]="activeMember == 'Employer' ? 'activeMember' : ''">Employer</li>
+          <li  [ngClass]="activeMember == 'Producer' ? 'activeMember' : ''">Producer</li>
+        </ul> 
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <form>
+            <div class="form-group">
+              <label for="userName">{{activeMember}} User Name</label>
+              <input type="text" class="form-control" id="userName"
+                    required
+                    [(ngModel)]="model.userName" name="userName">
+            </div>
+            <div class="form-group">
+              <label for="Password">Password</label>
+              <input type="text"  class="form-control" id="Password"
+                    [(ngModel)]="model.password" name="Password">
+            </div>
+            <button class="btn btn-primary"  (click)="login()">Log In</button>
+          </form>
+        </div>
+        <div class="col-sm-6">
+            <div class="new-user-details">          
+              <p class="new-user"> » New User</p>
+              <button class="btn btn-primary"  (click)="registerNow(content)">Register Now</button>
+           </div>
+
+        </div>
+      </div>
+    </div>
+</div>
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Register Now</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input type="text" class="form-control" id="firstName"
+              required
+              [(ngModel)]="newUser.firstName" name="firstName">
+      </div>
+      <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input type="text" class="form-control" id="lastName"
+              required
+              [(ngModel)]="newUser.lastName" name="lastName">
+      </div>
+      <div class="form-group">
+        <label for="dateofBirth">Date of Birth</label>
+        <input type="text" class="form-control" id="dateofBirth"
+              required
+              [(ngModel)]="newUser.dob" name="dateofBirth">
+      </div>
+      <div class="form-group">
+        <label for="mobileNo">Mobile No</label>
+        <input type="text" class="form-control" id="mobileNo"
+              required
+              [(ngModel)]="newUser.mobileNo" name="mobileNo">
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="text" class="form-control" id="email"
+              required
+              [(ngModel)]="newUser.email" name="email">
+      </div>
+      <button class="btn btn-primary"  (click)="submit()">submit</button>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+  </div>
+</ng-template>
