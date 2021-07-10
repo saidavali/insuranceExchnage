@@ -1,5 +1,7 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import {InsuranceExchangeUserData,InsuranceExchangeNewUser} from '../insurance-exchange-if';
+import {InsuranceExchangeServiceBaseService} from '../insurance-exchange-service-base.service';
 
 @Component({
   selector: 'app-insurance-exchnageheader',
@@ -7,18 +9,19 @@ import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 })
 export class InsuranceExchnageheaderComponent implements OnInit {
 
-  constructor(private modalService: NgbModal) {
+  constructor(private modalService: NgbModal, private serviceBase: InsuranceExchangeServiceBaseService) {
    }
 
   ngOnInit(): void {
   }
+  modelData:InsuranceExchangeUserData = {userName:'',password:''};
   moreSignIninfo:Boolean = false;
   activeMember:String = 'Member';
   closeResult = '';
-  model = {'userName':'','password':''};
-  newUser = {'firstName':'','lastName':'','dob':'','mobileNo':'','email':''}
+  newUser:InsuranceExchangeNewUser;
   login(){
     console.log("model");
+    this.serviceBase.loginWithUserData(this.modelData);
   }
   register(){
     console.log("register");
@@ -41,6 +44,8 @@ export class InsuranceExchnageheaderComponent implements OnInit {
   }
   showsignIn(){
     this.moreSignIninfo =  !this.moreSignIninfo;
+    this.modelData.userName = '';
+    this.modelData.password = '';
   }
   selectedMember(event){
     if(event.target["nodeName"] != "LI"){
