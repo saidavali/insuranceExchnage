@@ -29,10 +29,10 @@ import { InsuranceExchangeFooterComponent } from './insurance-exchange-footer/in
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     FormsModule,
-    NgbModule,
-    HttpClientModule
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

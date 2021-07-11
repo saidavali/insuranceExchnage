@@ -1,7 +1,7 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 import {InsuranceExchangeUserData,InsuranceExchangeNewUser} from '../insurance-exchange-if';
-import {InsuranceExchangeServiceBaseService} from '../insurance-exchange-service-base.service';
+import {InsuranceExchangeServiceBaseService} from '../services/insurance-exchange-service-base.service';
 
 @Component({
   selector: 'app-insurance-exchnageheader',
