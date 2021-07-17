@@ -14,14 +14,18 @@ export class InsuranceExchnageheaderComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  modelData:InsuranceExchangeUserData = {userName:'',password:''};
+  modelData:InsuranceExchangeUserData = {userName:'',password:'',userType:'1'};
   moreSignIninfo:Boolean = false;
   activeMember:String = 'Member';
   closeResult = '';
-  newUser:InsuranceExchangeNewUser;
+  newUser:InsuranceExchangeNewUser = {firstName:'',lastName:'',mobileNo:12,image:'',dob:new Date(),email:'',lob:false,gender:false,address:'',addressType:false};
   login(){
     console.log("model");
-    this.serviceBase.loginWithUserData(this.modelData);
+    let postData:any = ''; 
+    this.serviceBase.loginWithUserData(this.modelData).subscribe(data  => {
+      console.log(data);
+      postData = data;
+    });
   }
   register(){
     console.log("register");
@@ -62,7 +66,7 @@ export class InsuranceExchnageheaderComponent implements OnInit {
     let current = event.target;
     let insideMemenerData = false
     do {
-      console.log(current);
+      //console.log(current);
       if (current['className'] &&  current['className'].indexOf('member-info') > -1 ) {
         insideMemenerData =  true
       }

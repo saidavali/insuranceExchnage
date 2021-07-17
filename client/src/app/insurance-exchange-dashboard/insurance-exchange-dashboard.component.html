@@ -1,0 +1,16 @@
+<table class="table table-striped">
+    <thead class="thead-dark">
+        <tr>
+          <th *ngFor = "let column of headers" scope="col"> {{column}}</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let data of agentData; let i = index">
+            <td>{{i}}</td>
+            <td>{{data.agenetFirstName }}</td>
+            <td> {{ data.agentlastname}} </td>
+            <td> {{data.agentMobileNo}}</td>
+            <td class="schedule-call" (click)='makeaAppoitment(data)'> Schedule a call </td>
+        </tr>
+    </tbody>
+</table>

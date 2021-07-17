@@ -69,3 +69,7 @@
 .new-user-details{
     margin-top: 36px;
 }
+.schedule-call{
+    cursor: pointer;
+    color:#329dcb;
+}

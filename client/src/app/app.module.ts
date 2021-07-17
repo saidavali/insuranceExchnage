@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { InsuranceExchnageheaderComponent } from './insurance-exchnageheader/insurance-exchnageheader.component';
@@ -14,6 +15,7 @@ import { InsuranceExchangeHomeComponent } from './insurance-exchange-home/insura
 import { InsuranceExchangeLifeComponent } from './insurance-exchange-life/insurance-exchange-life.component';
 import { InsuranceExchangeContactComponent } from './insurance-exchange-contact/insurance-exchange-contact.component';
 import { InsuranceExchangeFooterComponent } from './insurance-exchange-footer/insurance-exchange-footer.component';
+import { InsuranceExchangeDashboardComponent } from './insurance-exchange-dashboard/insurance-exchange-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { InsuranceExchangeFooterComponent } from './insurance-exchange-footer/in
     InsuranceExchangeHomeComponent,
     InsuranceExchangeLifeComponent,
     InsuranceExchangeContactComponent,
-    InsuranceExchangeFooterComponent
+    InsuranceExchangeFooterComponent,
+    InsuranceExchangeDashboardComponent
   ],
   imports: [
     BrowserModule,

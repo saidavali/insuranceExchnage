@@ -2,13 +2,23 @@ export interface InsuranceExchangeIF {
 }
 export interface InsuranceExchangeUserData {
     userName: string;
-    password:String
+    password:string
+    userType:string
 }
 export interface InsuranceExchangeNewUser{
-    firstName:String,
-    lastName:String,
+    firstName:string,
+    lastName:string,
     dob:Date,
     mobileNo:number,
-    email:String,
-    image:String
+    email:string,
+    image:any,
+    lob:Boolean
+    gender:Boolean,
+    address:string
+    addressType:Boolean
+}
+export interface AgentDeatils{
+    agenetFirstName :string,
+    agentlastname:string,
+    agentMobileNo:number
 }
