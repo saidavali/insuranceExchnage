@@ -17,7 +17,7 @@ export class InsuranceExchangeDashboardComponent implements OnInit {
   
   closeResult = '';
   showCalenderData:boolean = false;
-  headers:string[]= ["SNO","Agent FirstName","Agent LastName","Mobile NO","Schedule a call"]
+  headers:string[]= ["SNO","FirstName","LastName","Mobile NO","Schedule a call"]
   agentData:AgentDeatils[]= [{
     agenetFirstName :"Johon",
     agentlastname:"walt",

@@ -77,7 +77,7 @@
     position: absolute;
     top: 0;
     z-index: 99;
-    width: 60%;
+    width: 50%;
     height: 95%;
     bottom: 0;
     left: 0;
@@ -96,4 +96,8 @@
 }
 .hideCalender{
     display: none;
+}
+body #watermark{
+    height: 0;
+    width: 0;
 }
