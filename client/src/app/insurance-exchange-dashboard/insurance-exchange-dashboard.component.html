@@ -10,7 +10,25 @@
             <td>{{data.agenetFirstName }}</td>
             <td> {{ data.agentlastname}} </td>
             <td> {{data.agentMobileNo}}</td>
-            <td class="schedule-call" (click)='makeaAppoitment(data)'> Schedule a call </td>
+            <td class="schedule-call" (click)='makeaAppoitment(data, scheduleCalender)'> Schedule a call </td>
         </tr>
     </tbody>
 </table>
+
+
+<div class="showCalender"  [ngClass]="[showCalenderData == false? 'hideCalender':'showCalenderData']" >
+  <div class="schedule-header">
+    <!-- <h4 class="modal-title" id="modal-basic-title">Register Now</h4> -->
+    <button type="button" class="close" aria-label="Close" (click)="closeDialog('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+   
+<smart-scheduler #scheduler id="scheduler" [dataSource]="dataSource" [currentTimeIndicator]="currentTimeIndicator"
+[shadeUntilCurrentTime]="shadeUntilCurrentTime" [hourStart]="hourStart" [hourEnd]="hourEnd" [view]="view"  [firstDayOfWeek]="firstDayOfWeek"  [hideNonworkingWeekdays] = "hideNonworkingWeekdays" [nonworkingDays]="nonworkingDays"></smart-scheduler>
+  </div>
+  <!-- <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+  </div> -->
+</div>

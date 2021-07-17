@@ -73,3 +73,27 @@
     cursor: pointer;
     color:#329dcb;
 }
+.showCalender{
+    position: absolute;
+    top: 0;
+    z-index: 99;
+    width: 60%;
+    height: 95%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    background: #fff;
+    border: 1px solid #329dcb;
+}
+.schedule-header{
+    height: 20px;
+    right: 20px;
+    position: relative;
+}
+.schedule-header button{
+    cursor: pointer;
+}
+.hideCalender{
+    display: none;
+}

@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
+import { SchedulerModule } from 'smart-webcomponents-angular/scheduler';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -35,7 +36,8 @@ import { InsuranceExchangeDashboardComponent } from './insurance-exchange-dashbo
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    SchedulerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
