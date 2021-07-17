@@ -25,10 +25,12 @@
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/smart-webcomponents-angular/source/styles/smart.default.css",
               "src/assets/css/style_old.css",
               "src/styles.css"
             ],
             "scripts": [
+              "node_modules/smart-webcomponents-angular/source/modules/smart.scheduler.js",
               "node_modules/jquery/dist/jquery.js", 
               "node_modules/bootstrap/dist/js/bootstrap.js"
             ]
