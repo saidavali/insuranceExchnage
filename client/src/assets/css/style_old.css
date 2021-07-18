@@ -613,7 +613,7 @@ Update: 07.11.2019
   
   .navbar-nav { width: 100%;   }
   .navbar-nav > li > a { background: transparent; text-transform: uppercase; color: #000; font-family: "Roboto", sans-serif; font-weight: 400; font-size: 16px; line-height: 20px; padding: 14px 16px; transition: background 350ms, color 350ms, border-color 350ms; }
-  .navbar-nav > li.active > a, .navbar-nav > li > a:hover, .navbar-nav > li > a:focus { color: #2580fe; background: transparent; }
+  .navbar-nav > li.active > a, .navbar-nav > li > a:hover, .navbar-nav > li > a:focus { color: #fff; background: #329dcb; }
   .navbar-nav > li > .dropdown-menu .dropdown-menu { top: 0; margin-top: 0; }
   .navbar-nav > li.rollover > .dropdown-menu, .navbar-nav > li.nav-opened > .dropdown-menu, .navbar-nav > li:hover > .dropdown-menu { top: 100%; margin-top: 0; opacity: 1; visibility: visible; }
   .navbar-nav > li:hover > .dropdown-menu { top: 100%; margin-top: 0; opacity: 1; visibility: visible; }
@@ -632,7 +632,7 @@ Update: 07.11.2019
   .navbar-nav .caret { margin-top: 0; vertical-align: middle; transform: translateY(-50%); }
   
   .header-s1 .navbar { padding: 0; }
-  .header-s1 .navbar-nav > li > a { padding-top: 20px; padding-bottom: 20px; }
+  /* .header-s1 .navbar-nav > li > a { padding-top: 20px; padding-bottom: 20px; } */
   .header-s1 .navbar-nav > li.quote-btn { margin-top: 16px; }
   .header-s1 .navbar-nav > li:last-child:not(.quote-btn) { margin-right: -15px; }
   .header-s1 .navbar-collapse { margin-right: -15px; float: right; width: auto; }
@@ -787,7 +787,7 @@ Update: 07.11.2019
     5.0 CTA / Call-Action
     ========================================================================== */
   .call-action { color: #fff; background-color: #329dcb; background-repeat: no-repeat; background-position: center center; background-size: cover; position: relative; }
-  .call-action .cta-block { padding: 15px 0; width: 100%; height: 100%; overflow: hidden; display: table; }
+  .call-action .cta-block { padding: 8px 0; width: 100%; height: 100%; overflow: hidden; display: table; }
   .call-action .cta-block > .cta-sameline { padding: 0; }
   .call-action h1, .call-action h2, .call-action h3, .call-action h4 { font-weight: 400; color: inherit; line-height: 1.5; margin: 15px 0; }
   .call-action h4 { font-weight: 300; }
@@ -847,7 +847,7 @@ Update: 07.11.2019
   .call-action .cta-sameline .content { padding-right: 260px; position: relative; }
   .call-action .cta-sameline h1, .call-action .cta-sameline h2, .call-action .cta-sameline h3, .call-action .cta-sameline h4, .call-action .cta-sameline p { margin: 3px 0 3px; }
   .call-action .cta-sameline .btn, .call-action .cta-sameline .cta-num { top: 50%; right: 0; margin-top: 0; position: absolute; transform: translate(0, -50%); transform-style: preserve-3d; }
-  .call-action .cta-sameline h3{font-size: 2em;font-weight: 600;text-align: center;}
+  .call-action .cta-sameline h3{font-weight: 600;text-align: center;}
   /* ==========================================================================
     6.0 Page Content - About, Service etc
     ========================================================================== */

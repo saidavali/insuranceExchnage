@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders, HttpErrorResponse, } from '@angular/common/htt
 import { Observable, of, throwError, } from 'rxjs';
 import { catchError,tap,finalize  } from 'rxjs/operators';
 
-import {InsuranceExchangeUserData,InsuranceExchangeNewUser} from '../insurance-exchange-if';
+import {InsuranceExchangeUserData} from '../insurance-exchange-if';
 
 
 @Injectable({

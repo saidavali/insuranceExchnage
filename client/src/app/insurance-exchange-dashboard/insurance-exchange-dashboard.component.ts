@@ -19,22 +19,22 @@ export class InsuranceExchangeDashboardComponent implements OnInit {
   showCalenderData:boolean = false;
   headers:string[]= ["SNO","FirstName","LastName","Mobile NO","Schedule a call"]
   agentData:AgentDeatils[]= [{
-    agenetFirstName :"Johon",
-    agentlastname:"walt",
-    agentMobileNo:125481588 
+    agenetFirstName :"Vijay",
+    agentlastname:"Kolla",
+    agentMobileNo:4696010369 
   },{
-    agenetFirstName :"Michel",
-    agentlastname:"Steve",
-    agentMobileNo:12548451188 
+    agenetFirstName :"Pradeep Kumar",
+    agentlastname:"Mudhuganti",
+    agentMobileNo:4696010361 
   },{
-    agenetFirstName :"Rogere",
-    agentlastname:"faf",
-    agentMobileNo:156515 
+    agenetFirstName :"Saidavali",
+    agentlastname:"Shaik",
+    agentMobileNo:4696010365 
   },
   {
     agenetFirstName :"Cleark",
     agentlastname:"Pointing",
-    agentMobileNo:156515 
+    agentMobileNo:4696010369 
   }];
   makeaAppoitment(agentData:AgentDeatils, scheduleCalender){
     console.log(agentData);

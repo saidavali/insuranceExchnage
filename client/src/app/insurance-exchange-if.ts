@@ -5,7 +5,7 @@ export interface InsuranceExchangeUserData {
     password:string
     userType:string
 }
-export interface InsuranceExchangeNewUser{
+export interface UserProfileData{
     firstName:string,
     lastName:string,
     dob:Date,
@@ -21,4 +21,9 @@ export interface AgentDeatils{
     agenetFirstName :string,
     agentlastname:string,
     agentMobileNo:number
+}
+export interface addressDetailsType{
+    city:string,
+    county:string,
+    zip:number
 }

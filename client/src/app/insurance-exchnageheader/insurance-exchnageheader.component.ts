@@ -1,6 +1,7 @@
 import { Component, OnInit, HostListener } from '@angular/core';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
-import {InsuranceExchangeUserData,InsuranceExchangeNewUser} from '../insurance-exchange-if';
+import {InsuranceExchangeUserData,UserProfileData} from '../insurance-exchange-if';
 import {InsuranceExchangeServiceBaseService} from '../services/insurance-exchange-service-base.service';
 
 @Component({
@@ -9,16 +10,17 @@ import {InsuranceExchangeServiceBaseService} from '../services/insurance-exchang
 })
 export class InsuranceExchnageheaderComponent implements OnInit {
 
-  constructor(private modalService: NgbModal, private serviceBase: InsuranceExchangeServiceBaseService) {
+  constructor(private modalService: NgbModal, private serviceBase: InsuranceExchangeServiceBaseService, private router :Router) {
    }
 
   ngOnInit(): void {
   }
+  loginSucessfull:boolean = false;
   modelData:InsuranceExchangeUserData = {userName:'',password:'',userType:'1'};
   moreSignIninfo:Boolean = false;
   activeMember:String = 'Member';
   closeResult = '';
-  newUser:InsuranceExchangeNewUser = {firstName:'',lastName:'',mobileNo:12,image:'',dob:new Date(),email:'',lob:false,gender:false,address:'',addressType:false};
+  newUser:UserProfileData = {firstName:'',lastName:'',mobileNo:12,image:'',dob:new Date(),email:'',lob:false,gender:false,address:'',addressType:false};
   login(){
     console.log("model");
     let postData:any = ''; 
@@ -26,6 +28,9 @@ export class InsuranceExchnageheaderComponent implements OnInit {
       console.log(data);
       postData = data;
     });
+    this.moreSignIninfo = false;
+    this.router.navigate(['/dashboard']);
+    this.loginSucessfull = true;
   }
   register(){
     console.log("register");

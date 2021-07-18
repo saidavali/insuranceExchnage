@@ -17,6 +17,7 @@ import { InsuranceExchangeLifeComponent } from './insurance-exchange-life/insura
 import { InsuranceExchangeContactComponent } from './insurance-exchange-contact/insurance-exchange-contact.component';
 import { InsuranceExchangeFooterComponent } from './insurance-exchange-footer/insurance-exchange-footer.component';
 import { InsuranceExchangeDashboardComponent } from './insurance-exchange-dashboard/insurance-exchange-dashboard.component';
+import { InsuranceExchangeEditProfileComponent } from './insurance-exchange-edit-profile/insurance-exchange-edit-profile.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { InsuranceExchangeDashboardComponent } from './insurance-exchange-dashbo
     InsuranceExchangeLifeComponent,
     InsuranceExchangeContactComponent,
     InsuranceExchangeFooterComponent,
-    InsuranceExchangeDashboardComponent
+    InsuranceExchangeDashboardComponent,
+    InsuranceExchangeEditProfileComponent
   ],
   imports: [
     BrowserModule,

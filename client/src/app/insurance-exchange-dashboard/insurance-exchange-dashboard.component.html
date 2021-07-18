@@ -1,5 +1,8 @@
 <div class="container">
-    <table class="table table-striped">
+  <div class="agent-list-header">
+    <p> List of Agents </p>
+  </div>
+    <table class="table table-striped table-bordered">
         <thead class="">
             <tr>
             <th *ngFor = "let column of headers" scope="col"> {{column}}</th>
@@ -7,7 +10,7 @@
         </thead>
         <tbody>
             <tr *ngFor = "let data of agentData; let i = index">
-                <td>{{i}}</td>
+                <td>{{i+1}}</td>
                 <td>{{data.agenetFirstName }}</td>
                 <td> {{ data.agentlastname}} </td>
                 <td> {{data.agentMobileNo}}</td>
@@ -19,7 +22,7 @@
 
 
 
-<div class="showCalender"  [ngClass]="[showCalenderData == false? 'hideCalender':'showCalenderData']" >
+<div class="showCalender box-flat"  [ngClass]="[showCalenderData == false? 'hideCalender':'showCalenderData']" >
   <div class="schedule-header">
     <!-- <h4 class="modal-title" id="modal-basic-title">Register Now</h4> -->
     <button type="button" class="close" aria-label="Close" (click)="closeDialog('Cross click')">
