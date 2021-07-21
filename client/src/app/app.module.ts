@@ -18,6 +18,7 @@ import { InsuranceExchangeContactComponent } from './insurance-exchange-contact/
 import { InsuranceExchangeFooterComponent } from './insurance-exchange-footer/insurance-exchange-footer.component';
 import { InsuranceExchangeDashboardComponent } from './insurance-exchange-dashboard/insurance-exchange-dashboard.component';
 import { InsuranceExchangeEditProfileComponent } from './insurance-exchange-edit-profile/insurance-exchange-edit-profile.component';
+import { InsuranceExchangeRegisterUserComponent } from './insurance-exchange-register-user/insurance-exchange-register-user.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { InsuranceExchangeEditProfileComponent } from './insurance-exchange-edit
     InsuranceExchangeContactComponent,
     InsuranceExchangeFooterComponent,
     InsuranceExchangeDashboardComponent,
-    InsuranceExchangeEditProfileComponent
+    InsuranceExchangeEditProfileComponent,
+    InsuranceExchangeRegisterUserComponent
   ],
   imports: [
     BrowserModule,

@@ -147,3 +147,20 @@ body #watermark{
     margin-top: 80px;
     margin-bottom: 20px;
 }
+.navbarNavDropdowndata .navbar-nav .user-image a:hover,.navbarNavDropdowndata .navbar-nav .user-image a:focus{
+    background:none;
+    color: black;
+}
+.dropdown-menu{
+    box-shadow: 0 2px 4px -1px rgb(0 0 0 / 20%), 0 4px 5px 0 rgb(0 0 0 / 14%), 0 1px 10px 0 rgb(0 0 0 / 12%);
+}
+.user-image .dropdown-menu{
+    left: -100px;
+    width: 90px;
+}
+.navbarNavDropdowndata .user-image .dropdown-menu a:hover{
+    background-color:#329dcba1;
+}
+.dashboard-headings .header-details:nth-child(4){
+    width: 120px;
+}

@@ -31,7 +31,7 @@
                 <li class="nav-item" *ngIf="!loginSucessfull">
                   <a class="nav-link" (click)="showsignIn()" herf=''>Sign IN</a>
                 </li>
-                <li class="nav-item dropdown user-image" *ngIf="loginSucessfull">
+                <li class="nav-item dropdown  user-image" *ngIf="loginSucessfull">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <img src="../assets/images/user-profile-4.png" width="30" height="30" class="d-inline-block align-top" alt="">
                   </a>
@@ -39,7 +39,7 @@
                     <a class="dropdown-item" routerLink="/editProfile">Edit profile</a>
                     <a class="dropdown-item"  routerLink="/dashboard">Dashboard</a>
                     <a class="dropdown-item"  routerLink="/dashboard">Calender</a>
-                    <a class="dropdown-item"  routerLink="/dashboard">Sign out</a>
+                    <a class="dropdown-item" href="/"  (click)="signOut()">Sign out</a>
                   </div>
                 </li>
             </ul>
@@ -50,8 +50,8 @@
   <div *ngIf="moreSignIninfo" class=" box-flat member-info dropdown-menu-center">
       <div class=""> 
         <ul class="role-details" (click)="selectedMember($event)">
-          <li [ngClass]="activeMember == 'Member' ? 'activeMember' : ''">User</li>
-          <li  [ngClass]="activeMember == 'Returning Shopper' ? 'activeMember' : ''">Agent</li>
+          <li [ngClass]="activeMember == 'User' ? 'activeMember' : ''">User</li>
+          <li  [ngClass]="activeMember == 'Agent' ? 'activeMember' : ''">Agent</li>
           <!-- <li  [ngClass]="activeMember == 'Employer' ? 'activeMember' : ''">Employer</li>
           <li  [ngClass]="activeMember == 'Producer' ? 'activeMember' : ''">Producer</li> -->
         </ul> 
@@ -60,7 +60,7 @@
         <div class="col-sm-6">
           <form>
             <div class="form-group">
-              <label for="userName">{{activeMember}} User Name</label>
+              <label for="userName">{{activeMember}} Name</label>
               <input type="text" class="form-control" id="userName"
                     required
                     [(ngModel)]="modelData.userName" name="userName">
@@ -76,7 +76,7 @@
         <div class="col-sm-6">
             <div class="new-user-details">          
               <p class="new-user"> » New User</p>
-              <button class="btn btn-primary"  (click)="registerNow(content)">Register Now</button>
+              <button class="btn btn-primary"  (click)="registerNow()">Register Now</button>
            </div>
 
         </div>
@@ -84,7 +84,7 @@
     </div>
 </div>
 
-<ng-template #content let-modal>
+<!-- <ng-template #content let-modal>
   <div class="modal-header">
     <h4 class="modal-title" id="modal-basic-title">Register Now</h4>
     <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
@@ -182,11 +182,11 @@
         <input type="radio" class="form-control" id="lob"
               required
               [(ngModel)]="newUser.lob" name="lob">
-      </div> -->
+      </div>
       <button class="btn btn-primary"  (click)="submit()">submit</button>
     </form>
   </div>
-  <!-- <div class="modal-footer">
+ <div class="modal-footer">
     <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
-  </div> -->
-</ng-template>
+  </div>
+</ng-template> -->

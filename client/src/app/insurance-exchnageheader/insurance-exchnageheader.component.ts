@@ -1,6 +1,5 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 import {InsuranceExchangeUserData,UserProfileData} from '../insurance-exchange-if';
 import {InsuranceExchangeServiceBaseService} from '../services/insurance-exchange-service-base.service';
 
@@ -10,7 +9,7 @@ import {InsuranceExchangeServiceBaseService} from '../services/insurance-exchang
 })
 export class InsuranceExchnageheaderComponent implements OnInit {
 
-  constructor(private modalService: NgbModal, private serviceBase: InsuranceExchangeServiceBaseService, private router :Router) {
+  constructor(private serviceBase: InsuranceExchangeServiceBaseService, private router :Router) {
    }
 
   ngOnInit(): void {
@@ -18,11 +17,9 @@ export class InsuranceExchnageheaderComponent implements OnInit {
   loginSucessfull:boolean = false;
   modelData:InsuranceExchangeUserData = {userName:'',password:'',userType:'1'};
   moreSignIninfo:Boolean = false;
-  activeMember:String = 'Member';
+  activeMember:String = 'User';
   closeResult = '';
-  newUser:UserProfileData = {firstName:'',lastName:'',mobileNo:12,image:'',dob:new Date(),email:'',lob:false,gender:false,address:'',addressType:false};
   login(){
-    console.log("model");
     let postData:any = ''; 
     this.serviceBase.loginWithUserData(this.modelData).subscribe(data  => {
       console.log(data);
@@ -32,29 +29,19 @@ export class InsuranceExchnageheaderComponent implements OnInit {
     this.router.navigate(['/dashboard']);
     this.loginSucessfull = true;
   }
-  register(){
-    console.log("register");
+  registerNow() {
+    this.router.navigate(['/registernow']);
+    this.moreSignIninfo = false;
   }
-  registerNow(content) {
-    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
-      this.closeResult = `Closed with: ${result}`;
-    }, (reason) => {
-      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-    });
-  }
-  private getDismissReason(reason: any): string {
-    if (reason === ModalDismissReasons.ESC) {
-      return 'by pressing ESC';
-    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
-      return 'by clicking on a backdrop';
-    } else {
-      return `with: ${reason}`;
-    }
-  }
+
   showsignIn(){
     this.moreSignIninfo =  !this.moreSignIninfo;
     this.modelData.userName = '';
     this.modelData.password = '';
+  }
+  signOut(){
+    this.router.navigate(['/']);
+    this.loginSucessfull = false;
   }
   selectedMember(event){
     if(event.target["nodeName"] != "LI"){

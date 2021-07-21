@@ -8,6 +8,7 @@ import { InsuranceExchangeLifeComponent } from './insurance-exchange-life/insura
 import { InsuranceExchangeContactComponent } from './insurance-exchange-contact/insurance-exchange-contact.component';
 import { InsuranceExchangeDashboardComponent } from './insurance-exchange-dashboard/insurance-exchange-dashboard.component';
 import { InsuranceExchangeEditProfileComponent } from './insurance-exchange-edit-profile/insurance-exchange-edit-profile.component';
+import {InsuranceExchangeRegisterUserComponent} from './insurance-exchange-register-user/insurance-exchange-register-user.component';
 
 const routes: Routes = [
   { path: '', component: InsuranceExchangeIndexComponent },
@@ -17,7 +18,8 @@ const routes: Routes = [
   {path: 'life', component: InsuranceExchangeLifeComponent},
   {path: 'contactus', component: InsuranceExchangeContactComponent},
   {path: 'dashboard', component: InsuranceExchangeDashboardComponent},
-  {path: 'editProfile', component: InsuranceExchangeEditProfileComponent}
+  {path: 'editProfile', component: InsuranceExchangeEditProfileComponent},
+  {path: 'registernow', component:InsuranceExchangeRegisterUserComponent}
 ];
 
 @NgModule({
