@@ -19,6 +19,13 @@ export class InsuranceExchangeServiceBaseService {
   baseUrl:string= "app/insuranceExchange/user/login"
   agentDetaildJson = "/assets/json/agentInfo.json";
   postData:any = 'failed';
+  userType:string; 
+  setUserType(type){
+    this.userType = type;
+  }
+  getUserType(){
+    return this.userType
+  }
   userloginResponse:InsuranceExchangeUserData;
   loginWithUserData(userData:InsuranceExchangeUserData):Observable<any>{
     let userresponse:any = ''

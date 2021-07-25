@@ -2,11 +2,11 @@
   <br>
   <br>
   <div class="agent-list-header wide-md center">
-    <h2 class=""> List of Agents </h2>
+    <h2 class=""> {{dashboardHeader}} </h2>
   </div>
   <div class="agent-dashboard row">
-    <div class="col-sm-2"></div>
-    <table class="table table-striped table-sm user-list-table  col-sm-9 table-bordered">
+    <div class="col-sm-1"></div>
+    <table class="table table-striped  user-list-table  col-sm-10 table-bordered">
         <thead class="">
             <tr class="dashboard-headings">
             <th *ngFor = "let column of headers"  class="header-details" scope="col"> {{column}}</th>
@@ -19,7 +19,7 @@
                 <td>{{data.FirstName}}</td>
                 <td>{{data.lastname}} </td>
                 <td>{{data.MobileNo}}</td>
-                <td class="schedule-call" (click)='makeaAppoitment(data, scheduleCalender)'> Schedule a call </td>
+                <td class="schedule-call" (click)='makeaAppoitment(data, scheduleCalender)'> {{makeaCall}} </td>
                 <td *ngIf="agetType" >
                   <textarea name="quote-request-message" placeholder="Comments *" class="txtarea form-control required"></textarea>
                 </td>
@@ -28,7 +28,7 @@
     </table>
     <div class="col-sm-1"></div>
     <div class="user-details-footer col-sm-11"> 
-      <ngb-pagination [collectionSize]="agentData.length" [(page)]="page" class="pagination"  [pageSize]="pageSize" aria-label="Default pagination">
+      <ngb-pagination [collectionSize]="agentData.length" [(page)]="page" class="pagination-deatils"  [pageSize]="pageSize" aria-label="Default pagination">
         <ng-template ngbPaginationPrevious>Prev</ng-template>
         <ng-template ngbPaginationNext>Next</ng-template>
       </ngb-pagination>

@@ -52,25 +52,30 @@
         <ul class="role-details" (click)="selectedMember($event)">
           <li [ngClass]="activeMember == 'User' ? 'activeMember' : ''">User</li>
           <li  [ngClass]="activeMember == 'Agent' ? 'activeMember' : ''">Agent</li>
-          <!-- <li  [ngClass]="activeMember == 'Employer' ? 'activeMember' : ''">Employer</li>
-          <li  [ngClass]="activeMember == 'Producer' ? 'activeMember' : ''">Producer</li> -->
         </ul> 
       </div>
       <div class="row">
         <div class="col-sm-6">
-          <form>
+          <form #userForm="ngForm">
             <div class="form-group">
               <label for="userName">{{activeMember}} Name</label>
-              <input type="text" class="form-control" id="userName"
-                    required
-                    [(ngModel)]="modelData.userName" name="userName">
+              <input type="text" class="form-control" id="userName" required [(ngModel)]="modelData.userName" name="userName" #name="ngModel">
             </div>
             <div class="form-group">
               <label for="Password">Password</label>
-              <input type="password"  class="form-control" id="Password"
-                    [(ngModel)]="modelData.password" name="Password">
+              <input type="password"  class="form-control" id="Password" required [(ngModel)]="modelData.password" name="Password" #password="ngModel">
             </div>
-            <button class="btn btn-primary"  (click)="login()">Log In</button>
+            <div *ngIf="name.invalid && (name.dirty || name.touched)" class="reuired-error">
+                <div *ngIf="name.errors?.required">
+                  * Name is required.
+                </div>
+            </div>
+            <div *ngIf="password.invalid && (password.dirty || password.touched)" class="reuired-error">
+              <div *ngIf="password.errors?.required">
+                * Password is required.
+              </div>
+          </div>
+            <button class="btn btn-primary" [disabled]="!userForm.form.valid"  (click)="login()">Log In</button>
           </form>
         </div>
         <div class="col-sm-6">

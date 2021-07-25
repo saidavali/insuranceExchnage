@@ -21,6 +21,7 @@ export class InsuranceExchnageheaderComponent implements OnInit {
   closeResult = '';
   login(){
     let postData:any = ''; 
+    this.serviceBase.setUserType(this.modelData.userType);
     this.serviceBase.loginWithUserData(this.modelData).subscribe(data  => {
       console.log(data);
       postData = data;
@@ -49,6 +50,13 @@ export class InsuranceExchnageheaderComponent implements OnInit {
     }
     this.activeMember = '';
     this.activeMember = event.target.innerText;
+    this.modelData.userType = '1';
+    this.modelData.userName = '';
+    this.modelData.password = '';
+    if(this.activeMember == 'Agent'){
+      this.modelData.userType = '2';
+    }
+    
   }
   @HostListener('click', ['$event'])
   handleKeyDown(event: KeyboardEvent) {

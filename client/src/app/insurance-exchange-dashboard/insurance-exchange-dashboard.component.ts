@@ -11,9 +11,19 @@ import {InsuranceExchangeServiceBaseService} from '../services/insurance-exchang
 export class InsuranceExchangeDashboardComponent implements OnInit {
 
   constructor(private serviceBase: InsuranceExchangeServiceBaseService) { }
-
+  userType= '1';
+  headers:string[] = ["Agent Id","FirstName","LastName","Mobile NO","Schedule a call"];
+  makeaCall = "Schedule a call";
+  dashboardHeader = "List of Agents";
   ngOnInit(): void {
     this.getListOfAgents();
+    this.userType = this.serviceBase.getUserType();
+    if(this.userType == '2'){
+      this.headers = ["User Id","First Name","Las tName","Mobile NO","View call details"];
+      this.makeaCall = "view details";
+      this.agetType = true;
+      this.dashboardHeader = "User details";
+    }
   }
   page = 1;
   pageSize = 10;
@@ -21,7 +31,6 @@ export class InsuranceExchangeDashboardComponent implements OnInit {
   closeResult = '';
   agentData: AgentDeatils[];
   showCalenderData:boolean = false;
-  headers:string[]= ["AgentId","FirstName","LastName","Mobile NO","Schedule a call"];
   getListOfAgents(){
     this.serviceBase.getAgentDetails().subscribe(data => this.agentData = data.agents );
   }
