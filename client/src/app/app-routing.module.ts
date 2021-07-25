@@ -9,6 +9,8 @@ import { InsuranceExchangeContactComponent } from './insurance-exchange-contact/
 import { InsuranceExchangeDashboardComponent } from './insurance-exchange-dashboard/insurance-exchange-dashboard.component';
 import { InsuranceExchangeEditProfileComponent } from './insurance-exchange-edit-profile/insurance-exchange-edit-profile.component';
 import {InsuranceExchangeRegisterUserComponent} from './insurance-exchange-register-user/insurance-exchange-register-user.component';
+import { InsuranceExchangeGetAQuoteComponent } from './insurance-exchange-get-aquote/insurance-exchange-get-aquote.component';
+import { InsuranceExchangeMyCalenderComponent } from './insurance-exchange-my-calender/insurance-exchange-my-calender.component';
 
 const routes: Routes = [
   { path: '', component: InsuranceExchangeIndexComponent },
@@ -19,7 +21,9 @@ const routes: Routes = [
   {path: 'contactus', component: InsuranceExchangeContactComponent},
   {path: 'dashboard', component: InsuranceExchangeDashboardComponent},
   {path: 'editProfile', component: InsuranceExchangeEditProfileComponent},
-  {path: 'registernow', component:InsuranceExchangeRegisterUserComponent}
+  {path: 'registernow', component:InsuranceExchangeRegisterUserComponent},
+  {path:'getaquote', component:InsuranceExchangeGetAQuoteComponent},
+  {path:'calender', component: InsuranceExchangeMyCalenderComponent}
 ];
 
 @NgModule({

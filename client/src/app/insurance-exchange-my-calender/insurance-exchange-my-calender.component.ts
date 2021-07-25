@@ -1,36 +1,15 @@
-import { Component, ViewChild, OnInit, AfterViewInit,EventEmitter } from '@angular/core';
+import { Component,  ViewChild, OnInit, AfterViewInit } from '@angular/core';
 import { SchedulerComponent, SchedulerDataSource, SchedulerViews, SchedulerViewType,SchedulerTimelineDayScale   } from 'smart-webcomponents-angular/scheduler';
-import {AgentDeatils} from '../insurance-exchange-if';
-import {InsuranceExchangeServiceBaseService} from '../services/insurance-exchange-service-base.service';
-
 
 @Component({
-  selector: 'app-insurance-exchange-dashboard',
-  templateUrl: './insurance-exchange-dashboard.component.html'
+  selector: 'app-insurance-exchange-my-calender',
+  templateUrl: './insurance-exchange-my-calender.component.html'
 })
-export class InsuranceExchangeDashboardComponent implements OnInit {
+export class InsuranceExchangeMyCalenderComponent implements OnInit {
 
-  constructor(private serviceBase: InsuranceExchangeServiceBaseService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.getListOfAgents();
-  }
-  page = 1;
-  pageSize = 10;
-  agentID = 0;
-  closeResult = '';
-  agentData: AgentDeatils[];
-  showCalenderData:boolean = false;
-  headers:string[]= ["AgentId","FirstName","LastName","Mobile NO","Schedule a call"];
-  getListOfAgents(){
-    this.serviceBase.getAgentDetails().subscribe(data => this.agentData = data.agents );
-  }
-  makeaAppoitment(agentData:AgentDeatils, scheduleCalender){
-    console.log(agentData);
-    this.showCalenderData = true;
-  }
-  closeDialog(data){
-    this.showCalenderData = false;
   }
   onDialogCloseSubScription:any  = '';
   onContextMenuOpenSubScription:any = '';
@@ -97,11 +76,10 @@ export class InsuranceExchangeDashboardComponent implements OnInit {
   }
   onChangeData(event){
     console.log(event.detail);
-    this.showCalenderData = false;
   }
   contextOpened(event: CustomEvent) {
     console.log("event " + event);
     document.getElementById("schedulerlabelLabel").innerHTML = "Subject";
   }
- 
+
 }

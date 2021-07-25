@@ -6,23 +6,30 @@
   </div>
   <div class="agent-dashboard row">
     <div class="col-sm-2"></div>
-    <table class="table table-striped  col-sm-9 table-bordered">
+    <table class="table table-striped table-sm user-list-table  col-sm-9 table-bordered">
         <thead class="">
             <tr class="dashboard-headings">
             <th *ngFor = "let column of headers"  class="header-details" scope="col"> {{column}}</th>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor = "let data of agentData; let i = index">
-                <td>{{i+1}}</td>
-                <td>{{data.agenetFirstName }}</td>
-                <td> {{ data.agentlastname}} </td>
-                <td> {{data.agentMobileNo}}</td>
+            <tr *ngFor = "let data of agentData | slice: (page-1) * pageSize : page * pageSize">
+                <td>{{data.Id}}</td>
+                <td>{{data.FirstName}}</td>
+                <td>{{data.lastname}} </td>
+                <td>{{data.MobileNo}}</td>
                 <td class="schedule-call" (click)='makeaAppoitment(data, scheduleCalender)'> Schedule a call </td>
             </tr>
         </tbody>
     </table>
     <div class="col-sm-1"></div>
+    <div class="user-details-footer col-sm-11"> 
+      <ngb-pagination [collectionSize]="agentData.length" [(page)]="page" class="pagination"  [pageSize]="pageSize" aria-label="Default pagination">
+        <ng-template ngbPaginationPrevious>Prev</ng-template>
+        <ng-template ngbPaginationNext>Next</ng-template>
+      </ngb-pagination>
+    </div>
+   
   </div>
   <br>
   <br>

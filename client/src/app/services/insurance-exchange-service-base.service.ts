@@ -17,6 +17,7 @@ export class InsuranceExchangeServiceBaseService {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
   baseUrl:string= "app/insuranceExchange/user/login"
+  agentDetaildJson = "/assets/json/agentInfo.json";
   postData:any = 'failed';
   userloginResponse:InsuranceExchangeUserData;
   loginWithUserData(userData:InsuranceExchangeUserData):Observable<any>{
@@ -37,6 +38,9 @@ export class InsuranceExchangeServiceBaseService {
       //   })
       // );
   //  return ; 
+  }
+  getAgentDetails():Observable<any>{
+    return this.http.get(this.agentDetaildJson)
   }
 
   private handleError(error: HttpErrorResponse) {

@@ -8,7 +8,7 @@ import { SchedulerModule } from 'smart-webcomponents-angular/scheduler';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { InsuranceExchnageheaderComponent } from './insurance-exchnageheader/insurance-exchnageheader.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbPaginationModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { InsuranceExchangeIndexComponent } from './insurance-exchange-index/insurance-exchange-index.component';
 import { InsuranceExchangeAutoComponent } from './insurance-exchange-auto/insurance-exchange-auto.component';
 import { InsuranceExchangeBusinessComponent } from './insurance-exchange-business/insurance-exchange-business.component';
@@ -19,6 +19,8 @@ import { InsuranceExchangeFooterComponent } from './insurance-exchange-footer/in
 import { InsuranceExchangeDashboardComponent } from './insurance-exchange-dashboard/insurance-exchange-dashboard.component';
 import { InsuranceExchangeEditProfileComponent } from './insurance-exchange-edit-profile/insurance-exchange-edit-profile.component';
 import { InsuranceExchangeRegisterUserComponent } from './insurance-exchange-register-user/insurance-exchange-register-user.component';
+import { InsuranceExchangeGetAQuoteComponent } from './insurance-exchange-get-aquote/insurance-exchange-get-aquote.component';
+import { InsuranceExchangeMyCalenderComponent } from './insurance-exchange-my-calender/insurance-exchange-my-calender.component';
 
 @NgModule({
   declarations: [
@@ -33,13 +35,16 @@ import { InsuranceExchangeRegisterUserComponent } from './insurance-exchange-reg
     InsuranceExchangeFooterComponent,
     InsuranceExchangeDashboardComponent,
     InsuranceExchangeEditProfileComponent,
-    InsuranceExchangeRegisterUserComponent
+    InsuranceExchangeRegisterUserComponent,
+    InsuranceExchangeGetAQuoteComponent,
+    InsuranceExchangeMyCalenderComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
+    NgbPaginationModule,
     NgbModule,
     SchedulerModule
   ],
