@@ -10,6 +10,7 @@
         <thead class="">
             <tr class="dashboard-headings">
             <th *ngFor = "let column of headers"  class="header-details" scope="col"> {{column}}</th>
+            <th  *ngIf="agetType">Comments </th>
             </tr>
         </thead>
         <tbody>
@@ -19,6 +20,9 @@
                 <td>{{data.lastname}} </td>
                 <td>{{data.MobileNo}}</td>
                 <td class="schedule-call" (click)='makeaAppoitment(data, scheduleCalender)'> Schedule a call </td>
+                <td *ngIf="agetType" >
+                  <textarea name="quote-request-message" placeholder="Comments *" class="txtarea form-control required"></textarea>
+                </td>
             </tr>
         </tbody>
     </table>

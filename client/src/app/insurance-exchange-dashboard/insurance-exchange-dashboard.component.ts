@@ -32,6 +32,7 @@ export class InsuranceExchangeDashboardComponent implements OnInit {
   closeDialog(data){
     this.showCalenderData = false;
   }
+  agetType = false;
   onDialogCloseSubScription:any  = '';
   onContextMenuOpenSubScription:any = '';
   ngAfterViewInit(): void {
